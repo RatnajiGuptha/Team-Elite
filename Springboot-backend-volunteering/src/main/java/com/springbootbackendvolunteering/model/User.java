@@ -1,7 +1,15 @@
 package com.springbootbackendvolunteering.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,6 +35,11 @@ public class User {
 	private String gender;
 	
 	private String BU;	
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "user")
+	@JsonIgnore
+	private Set<UserRole> userRoles=new HashSet<>();
+	
 	
 
 }
