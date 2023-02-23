@@ -7,6 +7,9 @@
     <div class="carousel-item" *ngFor="let event of upcomingEvents; let i = index" [ngClass]="{'active': i === 0}">
      <img src={{event.image}} class="img-fluid d-block w-100"/>
     </div>
+    <div class="carousel-item" class="active" *ngIf="upcomingEvents.length==0">
+     <img src={{noEventsImage}} class="img-fluid d-block w-100"/>
+    </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

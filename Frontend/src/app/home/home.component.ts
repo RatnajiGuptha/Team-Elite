@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   constructor() { 
   }
+  noEventsImage='https://www.caritasmalta.org/wp-content/uploads/2020/06/NO-UPCOMING-events.png';
   events : Event[] =[{
     name: 'Event 1',
     location: 'Hyderabad',
@@ -33,7 +34,7 @@ export class HomeComponent implements OnInit {
   name: 'Event 3',
   location: 'Hyderabad',
   date: {startDate:new Date('2023-02-27'),endDate:new Date('2023-02-28')},
-  registration: {startDate:new Date('2023-02-24'),endDate:new Date('2023-02-25')},
+  registration: {startDate:new Date('2023-02-23'),endDate:new Date('2023-02-25')},
   category: 'Outdoor',
   registered: false,
   image:'https://novamba.org/resources/Pictures/NVMBA%20June%20Event%20-%20register%202021.jpg'
@@ -69,18 +70,15 @@ upcomingEvents : Event[]=[];
     }
     for(let i=0;i<this.events.length;i++){
       if(this.events[i].registration.endDate.getFullYear()==new Date().getFullYear() && 
-      this.events[i].registration.startDate.getDate()>=new Date()?.getDate())
+      this.events[i].registration.startDate.getDate()>new Date()?.getDate())
       {
         this.upcomingEvents.push(this.events[i]);
       }
-      console.log(this.upcomingEvents);
-      
     }
   }
 
   ngAfterViewInit(){
-    const selectElement = <HTMLSelectElement>document.getElementById('carouselExampleIndicators');
-    // selectElement.carousel()
+    
   }
 
 

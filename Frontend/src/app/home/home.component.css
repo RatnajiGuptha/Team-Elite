@@ -14,7 +14,7 @@
 
 
 div.container {
-    width: 1350px;
+    width: 1150px;
     margin: 0 auto;
     overflow: hidden
   }
@@ -26,7 +26,7 @@ div.container {
     margin: 18px 8px;
   }
   .container .itemm {
-    width: 48%;
+    width: 45%;
     float: left;
     padding: 0 20px;
     background: rgb(206, 206, 206);
@@ -74,7 +74,7 @@ div.container {
     font-size: 25px;
   }
   .container .item-left {
-    width: 71%;
+    width: 65%;
     padding: 34px 0px 19px 46px;
     border-left: 3px dotted #999;
   } 
@@ -116,12 +116,16 @@ div.container {
   .container .item .cancel {background: #DF5454}
   .linethrough {text-decoration: line-through}
 
-  @media only screen and (max-width: 1150px) {
-    .container .item {
-      width: 100%;
-      margin-right: 20px
+  @media only screen and (max-width: 991px) {
+    div.container{
+      width:90%;
+      margin-left: 20px;
     }
-    div.container {
-      margin: 0 20px auto
+    .container .itemm {
+      /* float: none ; */
+      width: 100%;
+      margin-left: 40px;
     }
   }
+
+  /* 425> */
