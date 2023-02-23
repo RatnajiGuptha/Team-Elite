@@ -19,8 +19,20 @@
                 routerLinkActive="active">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Events</a>
-            </li>
+                <div class="dropdown">
+                  <button  class="btn dropdown-toggle" [ngStyle]="{'color': color}" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Events
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" [routerLink]="['/all-events']"
+                      routerLinkActive="active">All</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/current-events']"
+                      routerLinkActive="active">Current</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/upcoming-events']"
+                      routerLinkActive="active">Upcoming</a></li>
+                  </ul>
+                </div>
+              </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Analysis</a>
             </li>

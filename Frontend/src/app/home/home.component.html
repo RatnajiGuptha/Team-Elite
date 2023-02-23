@@ -5,6 +5,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item" *ngFor="let event of upcomingEvents; let i = index" [ngClass]="{'active': i === 0}">
+      <h3 class="heading">Upcoming Events</h3>
      <img src={{event.image}} class="img-fluid d-block w-100"/>
     </div>
     <div class="carousel-item" class="active" *ngIf="upcomingEvents.length==0">
