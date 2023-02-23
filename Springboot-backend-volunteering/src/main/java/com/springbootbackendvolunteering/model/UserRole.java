@@ -1,7 +1,6 @@
 package com.springbootbackendvolunteering.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,22 +10,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserRole {
+
+	private int userRoleId;
 	
-	@Id
-	private int empId;
+	private User user;
 	
-	private int firstName;
-	
-	private int lastName;
-	
-	private String emailId;
-	
-	private String phoneNumber;
-	
-	private String gender;
-	
-	private String BU;	
-	
+	private Role role;
 
 }
