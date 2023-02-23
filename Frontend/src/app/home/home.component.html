@@ -1,0 +1,54 @@
+
+<div id="carouselExampleIndicators" class="carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" *ngFor="let event of upcomingEvents; let i = index" [ngClass]="{'active': i === 0}" [attr.data-bs-slide-to]="i" aria-current="true" aria-label="Slide 1"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let event of upcomingEvents; let i = index" [ngClass]="{'active': i === 0}">
+     <img src={{event.image}} class="img-fluid d-block w-100"/>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  <!-- Event Cards -->
+  <div class="container">
+    <h1 class="upcomming">Current Events</h1>
+    <div class="itemm" *ngFor="let event of currentEvents">
+      <div class="item-right">
+        <p class="event">Deadline</p>
+        <h2 class="num">{{event.registration.endDate | date:'dd'}}</h2>
+        <p class="day">{{event.registration.endDate | date:'MMM'}}</p>
+        <span class="up-border"></span>
+        <span class="down-border"></span>
+      </div> <!-- end item-right -->
+      
+      <div class="item-left">
+        <p class="event">{{event.category}}</p>
+        <h2 class="title">{{event.name}}</h2>
+        
+        <div class="sce">
+          <div class="icon">
+            <i class="fa fa-table"></i>
+          </div>
+          <p>{{event.date.startDate | date: 'dd MMM hh:mm'}}</p>
+        </div>
+        <div class="fix"></div>
+        <div class="loc">
+          <div class="icon">
+            <i class="fa fa-map-marker"></i>
+          </div>
+          <p>{{event.location}}</p>
+        </div>
+        <div class="fix"></div>
+        <button class=" btn btn-warning register w-50">Register</button>
+      </div> <!-- end item-right -->
+    </div> 
+  </div>
