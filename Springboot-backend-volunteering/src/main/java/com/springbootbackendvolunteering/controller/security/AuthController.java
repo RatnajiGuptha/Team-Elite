@@ -1,4 +1,4 @@
-package com.springbootbackendvolunteering.security.controller;
+package com.springbootbackendvolunteering.controller.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

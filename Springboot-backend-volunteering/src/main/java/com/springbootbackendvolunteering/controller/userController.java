@@ -1,4 +1,4 @@
-package com.springbootbackendvolunteering.security.controller;
+package com.springbootbackendvolunteering.controller;
 
 import java.util.List;
 import java.util.Scanner;

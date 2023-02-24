@@ -33,10 +33,15 @@ public class SecurityConfig {
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeHttpRequests()
+		http.csrf().disable().authorizeRequests()
 				.requestMatchers(new AntPathRequestMatcher("/"), new AntPathRequestMatcher("/get"),
-						new AntPathRequestMatcher("/addUser"),new AntPathRequestMatcher("/login"))
-				.permitAll().anyRequest().authenticated().and().cors().and().exceptionHandling()
+						new AntPathRequestMatcher("/addUser"), new AntPathRequestMatcher("/login"),
+						new AntPathRequestMatcher("/swagger-resources/**"),
+						new AntPathRequestMatcher("/swagger-ui.html"), new AntPathRequestMatcher("/swagger-ui/**"),
+						new AntPathRequestMatcher("/v2/api-docs/**"), new AntPathRequestMatcher("/webjars/**"),
+						new AntPathRequestMatcher("/api/v2/api-docs**"))
+				.permitAll()
+				.anyRequest().authenticated().and().cors().and().exceptionHandling()
 				.authenticationEntryPoint(this.jwtAuthenticationEntryPoint).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
