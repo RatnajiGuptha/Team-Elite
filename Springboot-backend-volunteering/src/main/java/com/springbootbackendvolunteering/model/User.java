@@ -1,13 +1,10 @@
 package com.springbootbackendvolunteering.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,11 +21,15 @@ public class User {
 	@Id
 	private int empId;
 	
-	private int firstName;
-	
-	private int lastName;
+	private String userName;
 	
 	private String emailId;
+	
+	private String firstName;
+	
+	private String lastName;
+	
+	private String password;
 	
 	private String phoneNumber;
 	
@@ -36,9 +37,9 @@ public class User {
 	
 	private String BU;	
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "user")
+	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JsonIgnore
-	private Set<UserRole> userRoles=new HashSet<>();
+	private Role role;
 	
 	
 

@@ -14,37 +14,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springbootbackendvolunteering.model.Event;
 import com.springbootbackendvolunteering.serviceImplementation.EventServiceImpl;
 
-
-
 @RestController
 @RequestMapping("/engage")
 public class EventController {
-	
-	
-	
-	@Autowired
-	EventServiceImpl service;
-	
 
-	
+	@Autowired
+	EventServiceImpl eventServiceImpl;
+
 	// Posting event details by organizer
-	
-	
+
 	@PostMapping("/events")
-	public Event planAnEvent(@RequestBody Event event){
-		
-		return service.planAnEvent(event);
+	public Event planAnEvent(@RequestBody Event event) {
+
+		return eventServiceImpl.planAnEvent(event);
 	}
-	
-	
-	
-	
+
 	@GetMapping("/events")
-	public List<Event> getEvents(){
-		return service.getEvents();
-		
+	public List<Event> getEvents() {
+		return eventServiceImpl.getEvents();
+
 	}
-	
-	
-	
+
 }

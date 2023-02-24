@@ -1,12 +1,10 @@
 package com.springbootbackendvolunteering.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -21,12 +19,11 @@ import lombok.NoArgsConstructor;
 public class Role {
 	
 	@Id
-	@GeneratedValue
 	private int roleId;
 	
 	private String roleName;
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "role")
-	private Set<UserRole> userRoles=new HashSet<>();
+	private List<User> users;
 
 }

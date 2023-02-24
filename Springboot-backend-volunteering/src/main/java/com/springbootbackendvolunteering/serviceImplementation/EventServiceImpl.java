@@ -9,45 +9,24 @@ import com.springbootbackendvolunteering.model.Event;
 import com.springbootbackendvolunteering.repository.EventRepo;
 import com.springbootbackendvolunteering.service.EventService;
 
-
-
 @Service
 public class EventServiceImpl implements EventService {
 
-	
 	@Autowired
 	EventRepo eventRepo;
-	
-	
-	
-	
-	
-	//Method to post an event
-	
-	
+
+	// Method to post an event
+
 	public Event planAnEvent(Event event) {
-		// TODO Auto-generated method stub
-		
+
 		return eventRepo.save(event);
-		
+
 	}
 
-
-
-
-
-
-	
-	//Method to get all the events
-
+	// Method to get all the events
 
 	public List<Event> getEvents() {
-		// TODO Auto-generated method stub
 		return eventRepo.findAll();
 	}
 
-	
-	
-	
-	
 }
